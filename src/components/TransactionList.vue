@@ -21,7 +21,7 @@
         </tr>
         <tr v-for="transaction in paginatedTransactions" :key="transaction.id">
           <td>{{ transaction.title }}</td>
-          <td :style="{ color: transaction.type === 'income' ? 'green' : 'red', fontWeight: Math.abs(transaction.amount) >= 500 ? 'bold' : 'normal' }">
+          <td :style="{ color: transaction.type === 'income' ? 'green' : 'red', fontWeight: Math.abs((transaction.amount) >= 500 && transaction.type === 'expense') ? 'bold' : 'normal' }">
             {{ transaction.amount }}
           </td>
           <td :style="{ textTransform: 'uppercase' }">{{ transaction.type }}</td>
